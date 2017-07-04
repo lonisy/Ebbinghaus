@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ebbinghaus</title>
+	<link rel="stylesheet" href="style.min.css">
+</head>
+<body>
+<div class="container" id="container">
+</div>
+<script>
+    var body = document.body;
+    function g(id) {
+		    return document.getElementById(id);
+    }
+    function makeTimeLine() {
+            var div = document.createElement("div");
+            div.className = 'unit time-line';
+            for (var x = 1; x <= 75; x++) {
+                var unit = document.createElement("span");
+                unit.className = 'card';
+                unit.innerHTML = '第 '+x+' 天';
+                div.appendChild(unit);
+            }
+            g('container').appendChild(div);
+    }
+    makeTimeLine();
+    function makeUnitlog() {
+        var div = document.createElement("div");
+        div.className = 'unit learn';
+        for (var x = 1; x <= 15; x++) {
+            var unit = document.createElement("span");
+            unit.className = 'card';
+            unit.innerHTML =  x + 'd';
+            div.appendChild(unit);
+        }
+        g('container').appendChild(div);
+    }
+    function initUnitLog(n) {
+        for (var i = n; i >= 0; i--) {
+            makeUnitlog();
+        }
+    }
+    initUnitLog(60);
+</script>
+</body>
+</html>

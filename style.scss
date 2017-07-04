@@ -1,0 +1,58 @@
+body{
+  margin: 0;
+  padding: 0;
+  width: 8000px;
+}
+.unit{
+
+  $height: 100px;
+  $cardWidth: 80px;
+
+  margin: 0px;
+  width: 100%;
+
+  height: $height;
+  margin-bottom: 1px;
+
+
+  @for $i from 3 through 140 {
+    &:nth-child(#{$i}){
+      margin-left: ($cardWidth + 1) * $i - $cardWidth * 2 - 2;
+    }
+  }
+
+  &.time-line{
+    .card{
+      background-color: #0a9dc7;
+    }
+  }
+
+  &.learn{
+    height: $height/2;
+
+    .card:nth-child(1),
+    .card:nth-child(2),
+    .card:nth-child(4),
+    .card:nth-child(7),
+    .card:nth-child(15){
+      background-color: #b22933;
+    }
+    .card{
+      height: $height/2;
+      line-height: $height/2;
+    }
+  }
+  .card{
+    width: $cardWidth;
+    height: $height;
+    display: inline-block;
+    background-color: #1bc07d;
+    margin-left: 1px;
+    text-align: center;
+    line-height: $height;
+    color: #ffffff;
+    &.hot{
+      background-color: #0a9dc7;
+    }
+  }
+}
